@@ -17,6 +17,7 @@ export default {
         logout(){
             axios.post('/logout')
             .then(res => {
+                localStorage.removeItem('x_xsrf_token') 
                 this.$router.push({name: 'user.login'})
             })
         }

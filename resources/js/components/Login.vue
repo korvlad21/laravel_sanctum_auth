@@ -18,10 +18,12 @@ export default {
 
     methods: {
         login(){
-            axios.get('/sanctum/csrf-cookie').then(response => {
+            axios.get('/sanctum/csrf-cookie')
+            .then(response => {
                 axios.post('/login', {email: this.email, password: this.password})
                 .then(res=>{
-                    console.log(res.config.headers['X-XSRF_TOKEN'])
+                    localStorage.setItem('x_xsrf_token', res.config.headers['X-XSRF-TOKEN']) 
+                    this.$router.push({name: 'user.personal'})
                 })
                 .catch(error =>{
                     console.log(error.response);

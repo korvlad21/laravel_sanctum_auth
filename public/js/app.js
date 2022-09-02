@@ -5320,6 +5320,8 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.post('/logout').then(function (res) {
+        localStorage.removeItem('x_xsrf_token');
+
         _this.$router.push({
           name: 'user.login'
         });
