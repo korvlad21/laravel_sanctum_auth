@@ -56,14 +56,16 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", [_c("input", {
+  return _c("div", {
+    staticClass: "w-25"
+  }, [_c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
       value: _vm.name,
       expression: "name"
     }],
-    staticClass: "form-control",
+    staticClass: "form-control mt-3 mb-3",
     attrs: {
       type: "text",
       placeholder: "name"
@@ -84,7 +86,7 @@ var render = function render() {
       value: _vm.email,
       expression: "email"
     }],
-    staticClass: "form-control",
+    staticClass: "form-control mb-3",
     attrs: {
       type: "email",
       placeholder: "email"
@@ -105,7 +107,7 @@ var render = function render() {
       value: _vm.password,
       expression: "password"
     }],
-    staticClass: "form-control",
+    staticClass: "form-control mb-3",
     attrs: {
       type: "password",
       placeholder: "password"
@@ -126,7 +128,7 @@ var render = function render() {
       value: _vm.password_confirmation,
       expression: "password_confirmation"
     }],
-    staticClass: "form-control",
+    staticClass: "form-control mb-3",
     attrs: {
       type: "password",
       placeholder: "password_confirmation"

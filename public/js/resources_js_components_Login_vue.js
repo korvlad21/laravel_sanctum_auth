@@ -28,7 +28,7 @@ __webpack_require__.r(__webpack_exports__);
           email: _this.email,
           password: _this.password
         }).then(function (res) {
-          console.log(res);
+          console.log(res.config.headers['X-XSRF_TOKEN']);
         })["catch"](function (error) {
           console.log(error.response);
         });
@@ -54,14 +54,16 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", [_c("input", {
+  return _c("div", {
+    staticClass: "w-25"
+  }, [_c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
       value: _vm.email,
       expression: "email"
     }],
-    staticClass: "form-control",
+    staticClass: "form-control mt-3 mb-3",
     attrs: {
       type: "email",
       placeholder: "email"
@@ -82,7 +84,7 @@ var render = function render() {
       value: _vm.password,
       expression: "password"
     }],
-    staticClass: "form-control",
+    staticClass: "form-control mb-3",
     attrs: {
       type: "password",
       placeholder: "password"

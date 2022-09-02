@@ -3,6 +3,7 @@
         <router-link :to="{name: 'get.index'}">Get</router-link>
         <router-link :to="{name: 'user.login'}">Login</router-link>
         <router-link :to="{name: 'user.registration'}">Registration</router-link>
+        <router-link :to="{name: 'user.personal'}">Personal</router-link>
         <a @click.prevent="logout" href="#">Logout</a>
         <router-view></router-view>
     </div>
